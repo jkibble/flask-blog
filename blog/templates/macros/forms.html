@@ -1,0 +1,19 @@
+{% macro input(type="text", label="Label", name="input", placeholder="", icon="") %}
+  <div class="field">
+    <label class="label">{{ label }}</label>
+    <div class="control has-icons-left">
+      <input type="{{ type }}" name="{{ name }}" placeholder="{{ placeholder }}" class="input" required>
+      <span class="icon is-small is-left">
+        <i class="fa {{ icon }}"></i>
+      </span>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro button(type="is-success", value="value") %}
+<div class="field">
+  <button class="button {{ type }}">
+    {{ value }}
+  </button>
+</div>
+{% endmacro %}

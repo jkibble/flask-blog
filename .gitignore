@@ -1,0 +1,4 @@
+.*
+!.gitignore
+messages.pot
+messages.po

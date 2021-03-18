@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}Web App{% endblock %}
+
+{% block body %}
+
+{% import 'macros/forms.html' as forms %}
+<section class="section">
+  <form action="/login" class="box" method="POST">
+    {{ forms.input("text", "Email", "email", "first.last@example.com", "fa-envelope") }}
+    {{ forms.input("password", "Password", "password", "*********", "fa-lock") }}
+    {{ forms.button("is-success", "Login")}}
+  </form>
+</section>
+{% endblock %}

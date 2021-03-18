@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}Web App{% endblock %}
+
+{% block body %}
+
+{% import 'macros/forms.html' as forms %}
+<div class="columns is-centered">
+  <div class="column is-8">
+    <article class="box">
+      <h6 class="subtitle is-6">
+        <a href="/users/{{ post.author.id }}" class="is-link">
+          {{ post.author.username }}
+        </a>
+        <span>
+          {{ post.created_at.strftime('%Y-%m-%d %H:%M') }}
+          ({{ ngettext("%(num)d comment", "%(num)d comments", post.comment | length) }})
+        </span>
+      </h6>
+      <h1 class="title">
+        {{ post.title }}
+      </h1>
+      {{ post.body | safe }}
+    </article>
+    {% for comment in post.comment %}
+    <div class="box">
+      {{ comment.body | safe }}
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
