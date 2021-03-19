@@ -3,3 +3,4 @@ __pycache__/
 !.gitignore
 messages.pot
 messages.po
+db.sqlite3
